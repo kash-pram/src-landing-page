@@ -1,0 +1,45 @@
+
+
+body{
+    height: 98%;
+    width: 98%;
+    background-image: url("./squares.png");
+    background-repeat: repeat;
+}
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+}
+
+.disable-select {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.font-200 {
+    font-size: 2rem;
+}
+
+.font-bold {
+    font-weight: bold;
+}
+
+.landing-container{
+    /* border: 1px solid #3a3a3a; */
+    margin: 20px;
+    height: calc(100%-20px);
+    width: calc(100%-10px);
+}
+.logo-container{
+    background-image: url("./logo.png");
+    background-size: 90px;
+    background-repeat: no-repeat;
+    height: 100px;
+    position: relative;
+    top: -10px;
+    left: 10px;
+}
