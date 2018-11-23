@@ -34,12 +34,3 @@ footer{
     height: calc(100%-20px);
     width: calc(100%-10px);
 }
-.logo-container{
-    background-image: url("./logo.png");
-    background-size: 90px;
-    background-repeat: no-repeat;
-    height: 100px;
-    position: relative;
-    top: -10px;
-    left: 10px;
-}
