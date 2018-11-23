@@ -5,32 +5,53 @@ body{
     width: 98%;
     background-image: url("./squares.png");
     background-repeat: repeat;
+    font-family: "Trebuchet MS", Helvetica, sans-serif
 }
-footer{
+
+.fixed-footer{
     position: fixed;
     bottom: 0;
     left: 0;
-
 }
-
 .disable-select {
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
 }
-
 .font-200 {
     font-size: 2rem;
 }
-
 .font-bold {
     font-weight: bold;
 }
 
-.landing-container{
-    /* border: 1px solid #3a3a3a; */
+.container{
     margin: 20px;
     height: calc(100%-20px);
     width: calc(100%-10px);
+}
+.text-center{
+    text-align: center;
+}
+.align-center{
+    margin: 15px auto;
+}
+.display-block{
+    display: block;
+}
+.col-xs-12{
+    width: 100%;
+}
+.col-sm-10{
+    width: 90%
+}
+.col-md-6{
+    width: 50%;
+}
+.padding-5{
+    padding: 5px;
+}
+.margin-5{
+    margin: 5px;
 }
