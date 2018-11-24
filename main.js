@@ -33,16 +33,26 @@ elemName.addEventListener("keyup", enterToSubmit);
 elemEmail.addEventListener("keyup", enterToSubmit);
 
 function validateForm () {
-  if ( !filterEmail.test(elemEmail.value) ) {
-    elemErrorMsg.innerHTML += " Email Address";
-    showHideMsg();
-    setTimeout(showHideMsg, 3000)
+  elemEmail.value = elemEmail.value.trim();
+  elemName.value = elemName.value.trim();
+
+  if ( !filterEmail.test(elemEmail.value) && elemName.value.length === 0 ) {
+    elemErrorMsg.innerHTML = "Please provide a valid Name & Email Address";
+    elemName.focus();
+  } else if ( elemName.value.length === 0 ) {
+    elemErrorMsg.innerHTML = "Please provide a valid Name";
+    elemName.focus();
+  } else if ( !filterEmail.test(elemEmail.value) ) {
+    elemErrorMsg.innerHTML = "Please provide a valid Email Address";
     elemEmail.focus();
-    return false;
   } else {
     elemErrorMsg.innerHTML = "";
     saveData();
+    return;
   }
+
+  showHideMsg();
+  setTimeout(showHideMsg, 3000)
 } // FN VALIDATE-FORM
 
 function showHideMsg () {
