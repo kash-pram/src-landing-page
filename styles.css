@@ -44,7 +44,7 @@ button::-moz-focus-inner {
     vertical-align: middle;
 }
 
-.form-container{
+#divFormContainer{
     /* background-color: #fff; */
     border-radius: 5px;
     border-top: 1px solid #d8dee2;
@@ -76,7 +76,7 @@ button::-moz-focus-inner {
   ##Screen = 1281px to higher resolution desktops
 */
 @media (min-width: 1281px) {
-    .form-container{
+    #divFormContainer{
         width: 400px;
     }
 }
@@ -86,7 +86,7 @@ button::-moz-focus-inner {
 ##Screen = B/w 1025px to 1280px
 */
 @media (min-width: 1025px) and (max-width: 1280px) {
-    .form-container{
+    #divFormContainer{
         width: 400px;
     }
 }
@@ -96,7 +96,7 @@ button::-moz-focus-inner {
 ##Screen = B/w 768px to 1024px
 */
 @media (min-width: 768px) and (max-width: 1024px) {
-    .form-container{
+    #divFormContainer{
         width: 300px;
     }
 }
@@ -106,7 +106,7 @@ button::-moz-focus-inner {
 ##Screen = B/w 768px to 1024px
 */
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-    .form-container{
+    #divFormContainer{
         width: 300px;
     }
 }
@@ -116,7 +116,7 @@ button::-moz-focus-inner {
 ##Screen = B/w 481px to 767px
 */
 @media (min-width: 481px) and (max-width: 767px) {
-    .form-container{
+    #divFormContainer{
         width: 100%;
     }
 }
@@ -126,7 +126,7 @@ button::-moz-focus-inner {
 ##Screen = B/w 320px to 479px
 */
 @media (min-width: 320px) and (max-width: 480px) {
-    .form-container{
+    #divFormContainer{
         width: 100%;
     }
 }
@@ -152,7 +152,7 @@ button::-moz-focus-inner {
 .color-red-one{
     color: #ff3333;
 }
-.container{
+#divMainContainer{
     margin: 20px;
     height: calc(100%-20px);
     width: calc(100%-10px);
