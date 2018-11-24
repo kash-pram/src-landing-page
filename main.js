@@ -1,17 +1,14 @@
-
 var validateForm = validateForm;
 var resetForm = resetForm;
 var showLoading = showLoading;
 var hideLoading = hideLoading;
 var showHideMsg = showHideMsg;
 var loadScript = loadScript;
-var getAdScript = getAdScript;
 var loadFirebase = loadFirebase;
 
 var elemName = document.getElementById('inpName');
 var elemEmail = document.getElementById('inpEmail');
 var elemErrorMsg = document.getElementById('spanErrorMsg');
-var elemBody = document.getElementsByTagName('body');
 
 var filterEmail = /^([a-zA-Z])([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
@@ -41,7 +38,7 @@ function validateForm () {
   } else {
     showLoading();
     elemErrorMsg.innerHTML = "";
-    getAdScript();
+    loadScript("./dbCalls.js", loadFirebase);
     return;
   }
 
@@ -50,13 +47,11 @@ function validateForm () {
 } // FN VALIDATE-FORM
 
 function showLoading () {
-  showHideMsg();
-  elemErrorMsg.innerHTML = "Saving...";
+// TO DO:
 }
 
 function hideLoading () {
-  elemErrorMsg.innerHTML = "";
-  showHideMsg();
+// TO DO:
 }
 
 function showHideMsg () {
@@ -69,13 +64,9 @@ function showHideMsg () {
   }
 } // FN SHOW-HIDE-MSG
 
-function getAdScript () {
-  loadScript("./dbCalls.js", loadFirebase);
-} // FN SAVE-DATA
-
 function loadFirebase () {
   loadScript("https://www.gstatic.com/firebasejs/5.5.9/firebase.js", saveData);
-}
+} // FN LOAD-FIREBASE
 
 function resetForm () {
   elemName.value = "";

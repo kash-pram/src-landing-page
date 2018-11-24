@@ -1,4 +1,5 @@
-var successHTML = "";
+var successHTML = "Thank you. We will contact soon.";
+var elemMainContainer = document.getElementById('divMainContainer');
 
 var showSuccessHTML = showSuccessHTML;
 var saveData = saveData;
@@ -39,5 +40,5 @@ function saveData () {
 } // FN SAVE-DATA
   
 function showSuccessHTML () {
-    elemBody.innerHTML = successHTML;
+    elemMainContainer.innerHTML = successHTML;
 } // FN SHOW-SUCCESS-HTML
