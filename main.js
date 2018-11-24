@@ -12,20 +12,54 @@
 //   };
 //   firebase.initializeApp(config);
 // </script>
+var saveData = saveData;
+var validateForm = validateForm;
+var resetForm = resetForm;
 
+var elemName = document.getElementById('inpName');
+var elemEmail = document.getElementById('inpEmail');
+var elemErrorMsg = document.getElementById('spanErrorMsg');
 
-function checkEmail() {
+var filterEmail = /^([a-zA-Z])([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
-  var email = document.getElementById('inpEmail');
-  var emailError = document.getElementById('spanEmailError');
-  // var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-  var filter = /^([a-zA-Z])([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+function enterToSubmit (event) {
+  event.preventDefault();
+  if (event.keyCode === 13) {
+    validateForm();
+  }
+} // FN ENTER-TO-SUBMIT
 
-  if (!filter.test(email.value)) {
-    emailError.innerHTML = "Please provide a valid email address";
-    email.focus;
+elemName.addEventListener("keyup", enterToSubmit);
+elemEmail.addEventListener("keyup", enterToSubmit);
+
+function validateForm () {
+  if ( !filterEmail.test(elemEmail.value) ) {
+    elemErrorMsg.innerHTML += " Email Address";
+    showHideMsg();
+    setTimeout(showHideMsg, 3000)
+    elemEmail.focus();
     return false;
   } else {
-    emailError.innerHTML = "";
+    elemErrorMsg.innerHTML = "";
+    saveData();
   }
-}
+} // FN VALIDATE-FORM
+
+function showHideMsg () {
+  if ( elemErrorMsg.classList.contains('show') ) {
+    elemErrorMsg.classList.remove('show');
+    elemErrorMsg.classList.add('hide');
+  } else {
+    elemErrorMsg.classList.remove('hide');
+    elemErrorMsg.classList.add('show');
+  }
+} // FN SHOW-HIDE-MSG
+
+function saveData () {
+  resetForm();
+} // FN SAVE-DATA
+
+function resetForm () {
+  elemName.value = "";
+  elemEmail.value = "";
+} // FN RESET-FORM
