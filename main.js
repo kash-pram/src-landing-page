@@ -52,8 +52,18 @@ function validateForm () {
   }
 
   showHideMsg();
-  setTimeout(showHideMsg, 3000)
+  setTimeout(showHideMsg, 3000);
 } // FN VALIDATE-FORM
+
+function showLoading () {
+  showHideMsg();
+  elemErrorMsg.innerHTML = "Saving...";
+}
+
+function hideLoading () {
+  elemErrorMsg.innerHTML = "";
+  showHideMsg();
+}
 
 function showHideMsg () {
   if ( elemErrorMsg.classList.contains('show') ) {
@@ -66,10 +76,65 @@ function showHideMsg () {
 } // FN SHOW-HIDE-MSG
 
 function saveData () {
-  resetForm();
+  showLoading();
+  loadScript("https://www.gstatic.com/firebasejs/5.5.9/firebase.js", sendValues);
+
 } // FN SAVE-DATA
+
+function sendValues () {
+  firebase.initializeApp({
+    apiKey: "AIzaSyAEaVw_zTYkVnDUmoklQh9dQCLxstvcePU",
+    authDomain: "landing-contact-form.firebaseapp.com",
+    databaseURL: "https://landing-contact-form.firebaseio.com",
+    projectId: "landing-contact-form",
+    storageBucket: "landing-contact-form.appspot.com",
+    messagingSenderId: "608318984006"
+  });
+  var db_fireObj = firebase.firestore();
+
+  db_fireObj.settings({
+    timestampsInSnapshots: true
+  });
+
+  db_fireObj.collection('contacts').add({
+    Name: elemName.value,
+    Email: elemEmail.value
+    }).then(function(docRef) {
+    // TO DO: MAKE BROWSER NOT REMEMBER THE LAST ENTERED TEXTS
+    // TO DO: BACK-END TO RESTRICT ONLY 10 REQUESTS PER DAY FROM A IP
+
+        console.log("Document written with ID: ", docRef.id, ' @', Date.now());
+        resetForm();
+        hideLoading();
+    }).catch(function(error) {
+        console.error("Error adding document: ", error);
+    });
+}
 
 function resetForm () {
   elemName.value = "";
   elemEmail.value = "";
 } // FN RESET-FORM
+
+function loadScript (url, callback) {
+
+  var script = document.createElement("script")
+  script.type = "text/javascript";
+
+  if (script.readyState){  //IE
+      script.onreadystatechange = function () {
+          if (script.readyState === "loaded" ||
+                  script.readyState === "complete"){
+              script.onreadystatechange = null;
+              callback();
+          }
+      };
+  } else {  //Others
+      script.onload = function () {
+          callback();
+      };
+  }
+
+  script.src = url;
+  document.getElementsByTagName("head")[0].appendChild(script);
+}
