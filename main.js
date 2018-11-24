@@ -24,7 +24,7 @@ var filterEmail = /^([a-zA-Z])([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z
 
 function enterToSubmit (event) {
   event.preventDefault();
-  if (event.keyCode === 13) {
+  if ( event.keyCode === 13 ) {
     validateForm();
   }
 } // FN ENTER-TO-SUBMIT
@@ -102,14 +102,13 @@ function sendValues () {
     }).then(function(docRef) {
     // TO DO: MAKE BROWSER NOT REMEMBER THE LAST ENTERED TEXTS
     // TO DO: BACK-END TO RESTRICT ONLY 10 REQUESTS PER DAY FROM A IP
-
         console.log("Document written with ID: ", docRef.id, ' @', Date.now());
         resetForm();
         hideLoading();
-    }).catch(function(error) {
+    }).catch( function (error) {
         console.error("Error adding document: ", error);
     });
-}
+} // FN SEND-VALUES
 
 function resetForm () {
   elemName.value = "";
@@ -117,24 +116,23 @@ function resetForm () {
 } // FN RESET-FORM
 
 function loadScript (url, callback) {
-
   var script = document.createElement("script")
   script.type = "text/javascript";
 
-  if (script.readyState){  //IE
-      script.onreadystatechange = function () {
-          if (script.readyState === "loaded" ||
-                  script.readyState === "complete"){
-              script.onreadystatechange = null;
-              callback();
-          }
-      };
-  } else {  //Others
-      script.onload = function () {
-          callback();
-      };
+  if ( script.readyState ) {  // IE
+    script.onreadystatechange = function () {
+      if ( script.readyState === "loaded" ||
+          script.readyState === "complete" ) {
+            script.onreadystatechange = null;
+            callback();
+      }
+    };
+  } else {  // Others
+    script.onload = function () {
+      callback();
+    };
   }
 
   script.src = url;
   document.getElementsByTagName("head")[0].appendChild(script);
-}
+} // FN LOAD-SCRIPT
