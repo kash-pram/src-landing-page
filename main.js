@@ -47,11 +47,11 @@ function validateForm () {
 } // FN VALIDATE-FORM
 
 function showLoading () {
-// TO DO:
+  document.getElementById('divLoading').className = 'display';
 }
 
 function hideLoading () {
-// TO DO:
+  document.getElementById('divLoading').className = 'none';
 }
 
 function showHideMsg () {
