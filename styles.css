@@ -75,9 +75,10 @@ button::-moz-focus-inner {
 /* END: LOADING */
 
 #divMainContainer{
-    margin: 20px;
-    height: calc(100%-20px);
-    width: calc(100%-10px);
+    padding: 20px;
+    /* height: calc(100%-20px); */
+    height: 100%;
+    width: calc(100%-20px);
 }
 #spanErrorMsg{
     -webkit-transition: opacity 350ms ease-in-out;
