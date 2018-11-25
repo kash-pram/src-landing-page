@@ -24,8 +24,9 @@ function saveData () {
     // END: FIREBASE CONFIGURATION
 
     db_fireObj.collection('contacts').add({
-      Name: elemName.value,
-      Email: elemEmail.value
+      name: elemName.value,
+      email: elemEmail.value,
+      source: window.location.href
     }).then(function(docRef) {
 // TO DO: MAKE BROWSER NOT REMEMBER THE LAST ENTERED TEXTS
 // TO DO: BACK-END TO RESTRICT ONLY 10 REQUESTS PER DAY FROM A IP
