@@ -30,19 +30,6 @@ object, embed {
 button::-moz-focus-inner {
     border: 0;
 }
-  
-  
-.input-text{
-    height: 31px;
-    border: 1px solid #e6ecf0;
-    border-radius: 3px;
-    -webkit-box-shadow: 0px 0px 1px 1px  inset;
-    -moz-box-shadow: 0px 0px 1px 1px  inset;
-    box-shadow: 0px 0px 1px 1px inset;
-    transition: all 100ms linear;
-    box-sizing: border-box;
-    vertical-align: middle;
-}
 
 
 #divLoading.display{
@@ -55,7 +42,7 @@ button::-moz-focus-inner {
     position:fixed;
     width:100%;
     left:0;right:0;top:0;bottom:0;
-    background-color: rgba(255,255,255,0.7);
+    background-color: rgba(255,255,255,0.8);
     z-index:99;
     display:none;
 }
@@ -82,21 +69,21 @@ button::-moz-focus-inner {
     -webkit-animation: spin .8s linear infinite;
     animation: spin .8s linear infinite;
 }
-
-#divFormContainer{
-    /* background-color: #fff; */
+/* .border-gray{
+    border: 1px solid #737373;
     border-radius: 5px;
-    border-top: 1px solid #d8dee2;
-    border-top: 0;
+    background-color: #f2f2f2;
+} */
+/* #divFormContainer{
     box-sizing: border-box;
     word-wrap: break-word;
-    font-size: 14px;
     padding: 20px;
-    width: 100%;
-    margin: 0 auto;
-    min-width: 300px;
+} */
+#divMainContainer{
+    margin: 20px;
+    height: calc(100%-20px);
+    width: calc(100%-10px);
 }
-
 #spanErrorMsg{
     -webkit-transition: opacity 350ms ease-in-out;
     -moz-transition: opacity 350ms ease-in-out;
@@ -104,12 +91,7 @@ button::-moz-focus-inner {
     -ms-transition: opacity 350ms ease-in-out;
     transition: opacity 350ms ease-in-out;
 }
-.hide{
-    opacity: 0;
-}
-.show{
-    opacity: 1;
-}
+
 /* 
   ##Device = Desktops
   ##Screen = 1281px to higher resolution desktops
@@ -171,6 +153,27 @@ button::-moz-focus-inner {
 }
 
 
+.min-width-370{
+    min-width: 370px;
+}
+.hide{
+    opacity: 0;
+}
+.show{
+    opacity: 1;
+}
+.input-text{
+    height: 31px;
+    border: 1px solid #e6ecf0;
+    border-radius: 3px;
+    -webkit-box-shadow: 0px 0px 1px 1px  inset;
+    -moz-box-shadow: 0px 0px 1px 1px  inset;
+    box-shadow: 0px 0px 1px 1px inset;
+    transition: all 100ms linear;
+    box-sizing: border-box;
+    vertical-align: middle;
+    width: 320px;
+}
 .fixed-footer{
     position: fixed;
     bottom: 0;
@@ -191,11 +194,6 @@ button::-moz-focus-inner {
 .color-red-one{
     color: #ff3333;
 }
-#divMainContainer{
-    margin: 20px;
-    height: calc(100%-20px);
-    width: calc(100%-10px);
-}
 .text-center{
     text-align: center;
 }
@@ -207,15 +205,6 @@ button::-moz-focus-inner {
 }
 .display-inl-block{
     display: inline-block;
-}
-.col-xs-12{
-    width: 100%;
-}
-.col-sm-10{
-    width: 90%
-}
-.col-md-6{
-    width: 50%;
 }
 .padding-10{
     padding: 10px;

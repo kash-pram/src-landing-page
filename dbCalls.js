@@ -1,4 +1,4 @@
-var successHTML = "<p>Thank you, <soan class='font-bold'>" + elemName.value + "</span>.</p><p>We will contact you soon via <span class='font-bold'>" + elemEmail.value + "</span></p>";
+var successHTML = "<p>Thank you, <soan class='font-bold'>" + elemName.value + "</span></p><p>We will contact you soon via <span class='font-bold'>" + elemEmail.value + "</span></p>";
 var elemMainContainer = document.getElementById('divMainContainer');
 
 var showSuccessHTML = showSuccessHTML;
