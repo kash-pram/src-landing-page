@@ -29,9 +29,8 @@ function saveData () {
     }).then(function(docRef) {
 // TO DO: MAKE BROWSER NOT REMEMBER THE LAST ENTERED TEXTS
 // TO DO: BACK-END TO RESTRICT ONLY 10 REQUESTS PER DAY FROM A IP
-        console.log("Document written with ID: ", docRef.id, ' @', Date.now());
-// TO DO: REMOVE resetForm & hideLoading IF RELOADING PAGE
-        resetForm();
+// console.log("Document written with ID: ", docRef.id, ' @', Date.now());
+// resetForm();
         hideLoading();
         showSuccessHTML();
     }).catch( function (error) {

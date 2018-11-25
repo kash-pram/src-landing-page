@@ -1,5 +1,5 @@
 var validateForm = validateForm;
-var resetForm = resetForm;
+// var resetForm = resetForm;
 var showLoading = showLoading;
 var hideLoading = hideLoading;
 var showHideMsg = showHideMsg;
@@ -68,10 +68,10 @@ function loadFirebase () {
   loadScript("https://www.gstatic.com/firebasejs/5.5.9/firebase.js", saveData);
 } // FN LOAD-FIREBASE
 
-function resetForm () {
-  elemName.value = "";
-  elemEmail.value = "";
-} // FN RESET-FORM
+// function resetForm () {
+//   elemName.value = "";
+//   elemEmail.value = "";
+// } // FN RESET-FORM
 
 function loadScript (url, callback) {
   var script = document.createElement("script")

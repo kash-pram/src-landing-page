@@ -18,6 +18,8 @@ button{
 button:hover{
     background: #f0c762;
 }
+
+/* START: NO OUTLINE */
 a {
     outline: 0;
 }
@@ -30,8 +32,9 @@ object, embed {
 button::-moz-focus-inner {
     border: 0;
 }
+/* END: NO OUTLINE */
 
-
+/* START: LOADING */
 #divLoading.display{
     display: block;
 }
@@ -69,16 +72,8 @@ button::-moz-focus-inner {
     -webkit-animation: spin .8s linear infinite;
     animation: spin .8s linear infinite;
 }
-/* .border-gray{
-    border: 1px solid #737373;
-    border-radius: 5px;
-    background-color: #f2f2f2;
-} */
-/* #divFormContainer{
-    box-sizing: border-box;
-    word-wrap: break-word;
-    padding: 20px;
-} */
+/* END: LOADING */
+
 #divMainContainer{
     margin: 20px;
     height: calc(100%-20px);
@@ -223,3 +218,14 @@ button::-moz-focus-inner {
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
+/* .border-gray{
+    border: 1px solid #737373;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+} */
+/* #divFormContainer{
+    box-sizing: border-box;
+    word-wrap: break-word;
+    padding: 20px;
+} */
